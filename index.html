@@ -5,133 +5,306 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gideon Adesina | Web Designer</title>
   <style>
-    body {
+    :root{
+      --bg:#0b1220;
+      --panel:#101a2e;
+      --panel2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#a7b0c0;
+      --brand:#7c3aed;
+      --brand2:#22c55e;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(124,58,237,.18), transparent 55%),
+                  radial-gradient(900px 500px at 100% 20%, rgba(34,197,94,.12), transparent 50%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.65;
     }
-    header {
-      background: #0a2540;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    a{color:var(--text); text-decoration:none}
+    a:hover{opacity:.9; text-decoration:underline}
+    .container{max-width:1100px; margin:auto; padding:24px}
+    .nav{
+      position:sticky; top:0; z-index:10;
+      background: rgba(11,18,32,.75);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--border);
     }
-    header h1 {
-      margin-bottom: 10px;
-      font-size: 2.5em;
+    .nav-inner{display:flex; gap:14px; align-items:center; justify-content:space-between; padding:14px 24px; max-width:1100px; margin:auto;}
+    .brand{font-weight:800; letter-spacing:.2px}
+    .links{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
     }
-    header p {
-      font-size: 1.1em;
-      max-width: 700px;
-      margin: auto;
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      font-weight:700;
     }
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+    .btn.primary{background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(34,197,94,.65)); border:0}
+    .btn.primary:hover{filter:brightness(1.05)}
+    header.hero{
+      padding:64px 0 28px;
     }
-    h2 {
-      color: #0a2540;
-      margin-bottom: 20px;
+    .hero-grid{
+      display:grid; gap:20px;
+      grid-template-columns: 1.3fr .7fr;
+      align-items:stretch;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr}
     }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .panel{
+      background: rgba(16,26,46,.75);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
     }
-    footer {
-      background: #0a2540;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    h1{margin:0 0 8px; font-size:42px; line-height:1.15}
+    @media (max-width: 520px){ h1{font-size:34px} }
+    .sub{color:var(--muted); margin:0 0 14px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
+    .meta{
+      display:flex; flex-direction:column; gap:10px;
+      color:var(--muted);
+      font-size:14px;
     }
-    a {
-      color: #0a2540;
-      text-decoration: none;
-      font-weight: bold;
+    section{padding:22px 0}
+    h2{margin:0 0 14px; font-size:24px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:16px;
     }
+    .card{
+      background: rgba(16,26,46,.65);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+      transition: transform .15s ease;
+    }
+    .card:hover{transform: translateY(-2px)}
+    .card h3{margin:10px 0 8px; font-size:18px}
+    .muted{color:var(--muted)}
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      margin-right:8px;
+      margin-bottom:8px;
+    }
+    .thumb{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.02);
+    }
+    .card .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .divider{border-top:1px solid var(--border); margin:14px 0}
+    footer{
+      padding:30px 0 50px;
+      color:var(--muted);
+      text-align:center;
+    }
+    .small{font-size:13px}
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Gideon Adesina</h1>
-  <p>Web Designer | Cybersecurity & Data/AI (In Training)</p>
-  <p style="margin-top:20px;">
-    <a href="#projects">View Projects</a> |
-    <a href="#certs">Certifications</a> |
-    <a href="#contact">Contact</a>
-  </p>
-</header>
-
-<section id="projects">
-  <h2>projects</h2>
-  <p>
-    I am a passionate and growth-driven web designer with a strong interest in
-    cybersecurity and data/AI. I focus on building clean, responsive websites
-    while undergoing continuous training in security fundamentals and data-driven
-    technologies.
-  </p>
-</section>
-
-<section id="certs">
-  <h2>certifications & training</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>web design Training</h3>
-      <p>Responsible design, layout principles, and usability</p>
-      <p><em> certificate coming soon</em></p>
-    </div>
-    <div class="card">
-      <h3>cybersecurity Fundamentals</h3>
-      <p>security awareness, basic risk concepts, online safety.Tools:</p>
-      <p><em>In progress</em></p>
-    </div>
-    <div class="card">
-      <h3>Data & AI Foundations</h3>
-      <p>Introductory data concepts and AI Fundamentals.</p>
-      <p><em>In progress</em></p>
+  <!-- Top Nav -->
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">Gideon Adesina</div>
+      <div class="links">
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#certs">Certifications</a>
+        <a class="pill" href="#cv">CV</a>
+        <a class="pill" href="#contact">Contact</a>
+      </div>
     </div>
   </div>
-</section>
 
-<section>
-  <h2>Skills & Training</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Web Design</h3>
-      <p>HTML, CSS, Responsive Design, Website Layout</p>
-    </div>
-    <div class="card">
-      <h3>Cybersecurity</h3>
-      <p>Security Awareness, Risk Fundamentals (Ongoing Training)</p>
-    </div>
-    <div class="card">
-      <h3>Data / AI</h3>
-      <p>Data Basics, AI Concepts (Ongoing Training)</p>
-    </div>
+  <div class="container">
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-grid">
+        <div class="panel">
+          <h1>Web Designer</h1>
+          <p class="sub">Cybersecurity & Data/AI (In Training)</p>
+          <p>
+            I design clean, responsive websites for schools, NGOs, and businesses.
+            I’m also building strong foundations in cybersecurity and data/AI to create digital solutions that are usable and secure.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Contact Me</a>
+            <a class="btn" href="#cv">Download CV</a>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="small muted">
+            Available for: Website design • Landing pages • School/NGO websites • Portfolio sites
+          </div>
+        </div>
+
+        <div class="panel meta">
+          <div><strong>Location:</strong> Nigeria</div>
+          <div><strong>Primary Focus:</strong> Web Design</div>
+          <div><strong>Secondary:</strong> Cybersecurity + Data/AI (Training)</div>
+          <div class="small muted">
+            Tip: Add this portfolio as “Featured” on LinkedIn.
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="panel">
+        <p>
+          I am a passionate and growth-driven web designer with strong interest in cybersecurity and data/AI.
+          I build user-friendly websites and document my progress through practical projects and structured learning.
+        </p>
+        <div>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">Responsive Design</span>
+          <span class="badge">Canva</span>
+          <span class="badge">Cybersecurity (Training)</span>
+          <span class="badge">Data/AI (Training)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="muted">Add screenshots to make your projects look “real” and trustworthy. I already created image slots for you below.</p>
+
+      <div class="grid">
+        <div class="card">
+          <img class="thumb" src="assets/project-school.jpg" alt="School website preview">
+          <h3>School Website Design</h3>
+          <p class="muted"><strong>Problem:</strong> Modern online presence for schools</p>
+          <p><strong>Tools:</strong> HTML, CSS, Canva</p>
+          <p><strong>Outcome:</strong> Responsive multi-page concept website with clear structure.</p>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Live Demo</a>
+            <a class="btn" href="#" target="_blank">Case Study</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="thumb" src="assets/project-landing.jpg" alt="Landing page preview">
+          <h3>Business Landing Page</h3>
+          <p class="muted"><strong>Problem:</strong> Simple page that converts visitors</p>
+          <p><strong>Tools:</strong> HTML, CSS</p>
+          <p><strong>Outcome:</strong> Fast, clear landing page with strong call-to-action.</p>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Live Demo</a>
+            <a class="btn" href="#" target="_blank">Case Study</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="thumb" src="assets/project-portfolio.jpg" alt="Portfolio preview">
+          <h3>Personal Portfolio Website</h3>
+          <p class="muted"><strong>Problem:</strong> Personal branding & credibility</p>
+          <p><strong>Tools:</strong> GitHub Pages</p>
+          <p><strong>Outcome:</strong> Live portfolio site showcasing skills and growth.</p>
+          <div class="actions">
+            <a class="btn" href="/" target="_blank">Live Site</a>
+            <a class="btn" href="#" target="_blank">Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="small muted" style="margin-top:12px;">
+        Replace the “Live Demo / Case Study / Repo” links later when you create them. For now, screenshots alone already improve credibility.
+      </p>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <h2>Certifications & Training</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Web Design Training</h3>
+          <p class="muted">Responsive design, layout principles, usability.</p>
+          <p><em>Certificate coming soon</em></p>
+        </div>
+        <div class="card">
+          <h3>Cybersecurity Fundamentals</h3>
+          <p class="muted">Security awareness, basic risk concepts, online safety.</p>
+          <p><em>In progress</em></p>
+        </div>
+        <div class="card">
+          <h3>Data & AI Foundations</h3>
+          <p class="muted">Intro data concepts, AI basics, analytical thinking.</p>
+          <p><em>In progress</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <h2>CV</h2>
+      <div class="panel">
+        <p class="muted">Upload your PDF into this same GitHub repository and name it exactly:</p>
+        <p><strong>Gideon_Adesina_CV.pdf</strong></p>
+        <div class="cta">
+          <a class="btn primary" href="Gideon_Adesina_CV.pdf" target="_blank">Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="panel">
+        <p class="muted">Replace the placeholders below with your real details.</p>
+
+        <p><strong>Email:</strong> <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+
+        <p><strong>WhatsApp:</strong>
+          <a href="https://wa.me/234XXXXXXXXXX" target="_blank">Chat on WhatsApp</a>
+          <span class="small muted"> (Use your number like 2348012345678 — no +, no spaces)</span>
+        </p>
+
+        <p><strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank">View LinkedIn Profile</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 Gideon Adesina</div>
+      <div class="small muted">Built with GitHub Pages • Modern dark theme • Project-ready</div>
+    </footer>
+
   </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com" target="_blank">View Profile</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 Gideon Adesina</p>
-</footer>
-
 </body>
 </html>
