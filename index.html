@@ -146,6 +146,10 @@ header.hero-bg {
     linear-gradient(rgba(11,18,32,0.82), rgba(11,18,32,0.92)),
     url("assets/hero-bg.jpg") center/cover no-repeat;
   border-bottom: 1px solid rgba(233,238,252,0.12);
+  header.hero-bg .panel{
+  background: rgba(11,18,32,0.35);
+  border-radius: 18px;
+  padding: 22px;
 }
 
 /* Logo in header */
@@ -192,7 +196,7 @@ header.hero-bg {
       </div>
 
       <div class="profile-wrap">
-        <img class="avatar" src="assets/profile.png" alt="Gideon Adesina">
+        <img class="avatar" src="assets/profile.png.jpg" alt="Gideon Adesina">
         <div>
           <h1 style="margin:0;">Web Designer</h1>
           <p class="subtitle" style="margin-top:8px;">
@@ -206,15 +210,14 @@ header.hero-bg {
         I design clean, responsive websites for schools, NGOs, and businesses — with a focus on clarity, speed, and mobile-first layout.
       </p>
 
-      <div class="cta" style="margin-top:16px;">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn" href="#contact">Contact Me</a>
-        <a class="btn" href="Gideon_Adesina_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
+<div class="cta">
+  <a class="btn primary" href="#projects">View Projects</a>
+  <a class="btn" href="#contact">Contact Me</a>
+  <a class="btn" href="Gideon_Adesina_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+</div>
+ <div class="divider"></div>
 
-      <div class="divider"></div>
-
-      <div class="small muted">
+     <div class="small muted">
         Available for: Website design • Landing pages • School/NGO websites • Portfolio sites
       </div>
     </div>
@@ -319,16 +322,21 @@ header.hero-bg {
     </section>
 
     <!-- CV -->
-    <section id="cv">
-      <h2>CV</h2>
-      <div class="panel">
-        <p class="muted"></p>
-        <p><strong>Gideon_Adesina_CV.pdf</strong></p>
-        <div class="cta">
-          <a class="btn primary" href="Gideon_Adesina_CV.PDF.pdf" target="_blank" rel="noopener Download CV</a>
-        </div>
-      </div>
-    </section>
+   <section id="cv">
+  <h2>CV</h2>
+  <div class="panel">
+    <p><strong>Gideon_Adesina_CV.pdf</strong></p>
+
+    <div class="cta">
+      <a class="btn primary"
+         href="Gideon_Adesina_CV.PDF.pdf"
+         target="_blank"
+         rel="noopener">
+        Download CV
+      </a>
+    </div>
+  </div>
+</section>
 
     <!-- CONTACT -->
     <section id="contact">
