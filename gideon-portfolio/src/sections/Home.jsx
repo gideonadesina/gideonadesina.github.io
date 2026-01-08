@@ -7,7 +7,7 @@ export default function Home() {
       <div className="absolute -right-40 -top-40 h-[520px] w-[520px] rounded-full bg-white/60 blur-sm" />
       <div className="absolute -left-48 top-40 h-[420px] w-[420px] rounded-full bg-white/50 blur-sm" />
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 pt-28 md:grid-cols-2">
+    <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-8 pt-24 md:grid-cols-2">
         {/* Left floating cards */}
         <div className="space-y-6">
           <motion.div
@@ -20,9 +20,9 @@ export default function Home() {
 
             <div className="mt-2 flex items-center gap-3">
               <span className="text-2xl">👋</span>
-              <h1 className="text-4xl font-extrabold tracking-tight">
-                Adesina <span className="text-[color:var(--brand)]">Gideon</span>
-              </h1>
+              <h1 className="text-[44px] font-extrabold tracking-tight text-slate-950">
+  Adesina <span className="text-[color:var(--brand)]">Gideon</span>
+</h1>
             </div>
 
             <p className="mt-4 text-slate-600">
@@ -49,7 +49,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.08 }}
-            className="w-full max-w-md rounded-2xl bg-white/70 p-6 text-center shadow-soft backdrop-blur"
+            className="w-full max-w-[520px] md rounded-2xl bg-white/70 p-6 text-center shadow-soft backdrop-blur"
           >
             <div className="text-xs font-semibold tracking-widest text-slate-500">
               FRONTEND DEVELOPER

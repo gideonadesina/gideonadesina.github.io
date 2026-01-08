@@ -9,88 +9,60 @@ const links = [
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("home");
-  const [open, setOpen] = useState(false);
+ const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const ids = links.map((l) => l.id);
-    const sections = ids
-      .map((id) => document.getElementById(id))
-      .filter(Boolean);
+    const sections = links.map((l) => document.getElementById(l.id)).filter(Boolean);
 
     const io = new IntersectionObserver(
       (entries) => {
-        const visible = entries
+        const hit = entries
           .filter((e) => e.isIntersecting)
           .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
-        if (visible?.target?.id) setActive(visible.target.id);
+        if (hit?.target?.id) setActive(hit.target.id);
       },
-      { root: null, threshold: [0.2, 0.35, 0.5], rootMargin: "-20% 0px -60% 0px" }
+      { threshold: [0.2, 0.35, 0.5], rootMargin: "-20% 0px -60% 0px" }
     );
 
     sections.forEach((s) => io.observe(s));
     return () => io.disconnect();
   }, []);
 
-  const go = (id) => {
-    setOpen(false);
+  
+  
+const go = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-40">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <button
-          onClick={() => go("home")}
-          className="rounded-xl bg-white/70 px-4 py-2 text-sm font-extrabold tracking-tight shadow-soft backdrop-blur"
-        >
-          AG
-        </button>
+    <header className="fixed left-0 right-0 top-0 z-[2]">
+      <div className="mx-auto flex max-w-6xl justify-center px-8 pt-6">
+        <nav className="flex h-[68px] w-full max-w-[768px] items-center justify-between rounded-2xl border border-white/20 bg-white/25 px-8 py-4 backdrop-blur-[4px] shadow-soft">
+          {/* Left brand (optional like Yusuf logo) */}
+          <button
+            onClick={() => go("home")}
+            className="font-extrabold tracking-tight text-slate-800"
+            aria-label="Go Home"
+          >
+            gideon
+          </button>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 rounded-2xl bg-white/70 px-6 py-3 shadow-soft backdrop-blur md:flex">
-          {links.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => go(l.id)}
-              className={`text-xs font-bold tracking-widest ${
-                active === l.id ? "text-[color:var(--brand)]" : "text-slate-600"
-              }`}
-            >
-              {l.label}
-            </button>
-          ))}
-        </nav>
-
-        {/* Mobile */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="grid h-11 w-11 place-items-center rounded-2xl bg-white/70 text-slate-700 shadow-soft backdrop-blur md:hidden"
-          aria-label="Menu"
-        >
-          ☰
-        </button>
-      </div>
-
-      {open && (
-        <div className="mx-auto max-w-6xl px-6 md:hidden">
-          <div className="rounded-2xl bg-white/80 p-4 shadow-soft backdrop-blur">
-            <div className="flex flex-col gap-3">
-              {links.map((l) => (
-                <button
-                  key={l.id}
-                  onClick={() => go(l.id)}
-                  className={`rounded-xl px-4 py-3 text-left text-sm font-semibold ${
-                    active === l.id ? "bg-white text-[color:var(--brand)]" : "text-slate-700"
-                  }`}
-                >
-                  {l.label}
-                </button>
-              ))}
-            </div>
+          {/* Links */}
+          <div className="flex items-center gap-10">
+            {links.map((l) => (
+              <button
+                key={l.id}
+                onClick={() => go(l.id)}
+                className={`text-[12.8px] font-medium uppercase leading-[19.2px] transition
+                  ${active === l.id ? "text-[color:var(--brand)]" : "text-slate-500"}
+                `}
+              >
+                {l.label}
+              </button>
+            ))}
           </div>
-        </div>
-      )}
+        </nav>
+    </div>
     </header>
   );
 }
