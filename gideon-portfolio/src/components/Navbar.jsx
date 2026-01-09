@@ -44,7 +44,7 @@ const go = (id) => {
             className="font-extrabold tracking-tight text-slate-800"
             aria-label="Go Home"
           >
-            gideon
+            Gideon
           </button>
 
           {/* Links */}
