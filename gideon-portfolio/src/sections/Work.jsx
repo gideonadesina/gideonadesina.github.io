@@ -43,16 +43,16 @@ export default function Work() {
 
       {/* Projects grid */}
       <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2">
-        {filtered.map((p) => (
+        {(filtered ?? []).map((p) => (
           <article
             key={p.id}
             className="group rounded-2xl bg-white p-6 shadow-soft transition hover:-translate-y-2 hover:shadow-xl"
           >
-            <div className="overflow-hidden rounded-2xl bg-slate-100">
+            <div className="h-56 w-full overflow-hidden rounded-xl bg-slate-100">
               <img
                 src={p.image}
                 alt={p.title}
-                className="h-[240px] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="h-full w-full object-cover"
               />
             </div>
 
@@ -64,7 +64,7 @@ export default function Work() {
 
               {/* Tech tags */}
               <div className="mt-4 flex flex-wrap gap-2">
-                {p.tech.map((t) => (
+                {(Array.isArray(p.tech) ? p.tech : []).map((t) => (
                   <span
                     key={t}
                     className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"

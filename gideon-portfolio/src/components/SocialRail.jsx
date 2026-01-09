@@ -41,3 +41,11 @@ export default function SocialRail() {
     </div>
   );
 }
+<a
+  href="/Gideon-Adesina-CV.pdf"
+  target="_blank" rel="noreferrer"
+  className="group flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-lg"
+  title="CV"
+>
+  <span className="text-lg">📄</span>
+</a>
