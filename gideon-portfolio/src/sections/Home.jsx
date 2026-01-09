@@ -1,3 +1,7 @@
+<div className="mb-6 rounded-2xl bg-red-600 p-4 text-white font-extrabold">
+  TAILWIND IS APPLYING HERE ✅
+</div>
+
 import { motion } from "framer-motion";
 
 export default function Home() {
