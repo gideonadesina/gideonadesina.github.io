@@ -35,11 +35,11 @@ export default function Contact() {
             <div className="text-xs font-bold tracking-widest text-slate-600">WHATSAPP</div>
             <a
               className="mt-1 block font-semibold text-slate-800"
-              href="https://wa.me/2348064467550"
+              href="https://wa.me/2348025523317"
               target="_blank"
               rel="noreferrer"
             >
-              (+234) 806 446 7550
+              (+234) 802 552 3317
             </a>
           </div>
         </div>

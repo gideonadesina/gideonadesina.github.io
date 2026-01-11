@@ -48,13 +48,14 @@ export default function Work() {
             key={p.id}
             className="group rounded-2xl bg-white p-6 shadow-soft transition hover:-translate-y-2 hover:shadow-xl"
           >
-            <div className="h-56 w-full overflow-hidden rounded-xl bg-slate-100">
-              <img
-                src={p.image}
-                alt={p.title}
-                className="h-full w-full object-cover"
-              />
-            </div>
+           <div className="h-60 w-full overflow-hidden rounded-2xl bg-slate-100">
+  <img
+   src={`${import.meta.env.BASE_URL}${p.image}`}
+    alt={p.title}
+    className="h-full w-full object-cover"
+    loading="lazy"
+  />
+</div>
 
             <div className="mt-6">
               <h3 className="text-2xl font-extrabold text-slate-900">
