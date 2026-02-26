@@ -44,13 +44,13 @@ export default function Home() {
         {/* RIGHT IMAGE */}
         <div className="relative flex justify-center items-center">
           {/* Background circle */}
-          <div className="absolute h-[360px] w-[360px] rounded-full bg-slate-200/60" />
-          <div className="absolute h-[360px] w-[360px] rounded-full bg-[color:var(--brand)]/10" />
+          <div className="absolute h-[340px] w-[340px] rounded-full bg-slate-200/60" />
+          <div className="absolute h-[340px] w-[340px] rounded-full bg-[color:var(--brand)]/10" />
 
           <img
             src={gideon}
             alt="Adesina Gideon"
-            className="relative z-10 h-[420px] object-contain"
+            className="relative z-10 h-[300px] object-contain"
           />
         </div>
       </div>

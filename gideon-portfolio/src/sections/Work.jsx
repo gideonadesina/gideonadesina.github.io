@@ -32,14 +32,23 @@
                 <div className="absolute right-4 top-4 flex gap-3">
                   {p.live && (
                     <a
-                      href={p.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="grid h-10 w-10 place-items-center rounded-full bg-white/90 shadow hover:bg-white"
-                      title="Live demo"
-                    >
-                      👁️
-                    </a>
+  href={p.live}
+  target="_blank"
+  rel="noreferrer"
+  className="grid h-10 w-10 place-items-center rounded-full bg-white/90 shadow hover:bg-white"
+  title="Open project"
+>
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"
+    />
+    <path
+      fill="currentColor"
+      d="M5 5h7v2H7v10h10v-5h2v7H5V5z"
+    />
+  </svg>
+</a>
                   )}
                   {p.github && (
                     <a
