@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const links = [
   { id: "home", label: "HOME" },
   { id: "about", label: "ABOUT" },
+  { id: "expertise", label: "EXPERTISE"},
   { id: "work", label: "WORK" },
   { id: "skills", label: "SKILLS" },
   { id: "contact", label: "CONTACT" },
@@ -56,6 +57,7 @@ const go = (id) => {
                 className={`text-[12.8px] font-medium uppercase leading-[19.2px] transition
                   ${active === l.id ? "text-[color:var(--brand)]" : "text-slate-500"}
                 `}
+  
               >
                 {l.label}
               </button>
